@@ -269,3 +269,8 @@ footer {
     }
 }
 
+button:active {
+    background-color: white !important;
+    color:#0125af;
+    border: none;
+}
