@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Дополнительное</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-image: url('/photos/header_bg.png');">
+            <div class="container-fluid">
+                <!-- Кнопка для раскрытия меню -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Навигационные ссылки -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="nav navbar-nav mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Главное меню</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="catalogue_cart.html">Сделать заказ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" style="background-color: white; color: #0125af;" href="additional_page.html">Дополнительное</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contacts">Контакты</a>
+                        </li>
+                    </ul>
+
+                    <!-- Иконки Telegram и Карт -->
+                    <div class="d-flex">
+                        <a href="https://t.me/rinasmetanina" target="_blank" class="me-3">
+                            <img src="/photos/telegram-svgrepo-com.svg" alt="Телеграм" title="Значок Телеграм" class="img-fluid" style="height: 30px;">
+                        </a>
+                        <a href="https://www.google.ru/maps/search/дринкит/@55.6562272,37.6017791,11z/data=!3m1!4b1?entry=ttu" target="_blank">
+                            <img src="/photos/maps_icon.png" alt="Google Maps" title="Значок Карт" class="img-fluid" style="height: 30px;">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="section_ad1" class="container py-5">
+            <div class="row align-items-center">
+                <!-- Левая колонка: заголовки и текст -->
+                <div class="col-lg-6 text-center text-lg-start">
+                    <h2 class="display-4 fw-bold mb-3">Наш кофе</h2>
+                    <h3 class="col-lg-4 text-center">Какой он?</h3>
+                    <p class="mb-4">
+                        Кофейные беседы помогли нам составить профиль вкуса кофе в Дринкит. Мы хотим, чтобы каждая чашка кофе была плотной, 
+                        с высокой сладостью, а также с приятной кислинкой и послевкусием.
+                    </p>
+                    <p class="mb-4">
+                        Нам удалось достичь этого, используя для напитков на основе эспрессо смесь из двух сортов: Бразилия Суль-де-Минас и Эфиопия Амару Амхару.
+                    </p>
+                    <p>
+                        Наша ароматная основа для эспрессо обладает ярким вкусовым букетом. В ней сочетаются ноты пралине из фундука, сладость и кислотность жёлтых фруктов, 
+                        оттенки шоколада и тёмных ягод. А послевкусие оставляет долгое ощущение вишни в шоколаде.
+                    </p>
+                </div>
+                <!-- Правая колонка: изображение -->
+                <div class="col-lg-6 text-center">
+                    <img src="/photos/coffee_on_palm.jpg" class="img-fluid rounded col-lg-12 text-center" alt="Молотый кофе на ладони бариста" style="max-width: 100%; height: auto;">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section id="section_ad2">
+        <div class="container">
+            <h2>Что и как пьют наши бариста дома?</h2>
+            <p>Мы доказываем, что для наших бариста кофе - это не только их ежедневная рабочая рутина, 
+                но и интересное и вкусное хобби.
+                <br><br>
+                Поэтому для вас наши бариста придумали рекомендации, как вкусно сварить кофе дома.
+            </p>
+        </div>
+        <div class="container" style="display: flex; flex-direction: row;">
+        
+        <!-- Контейнер с картинкой и текстом, который будет располагаться рядом -->
+        <div class="container d-flex flex-md-row flex-column align-items-center">
+            <!-- Фото героини слева -->
+            <div class="image-container w-25">
+                <img src="/photos/girl1.jpg" title="Лиза" alt="Лиза греет молоко" id="img_liza" class="img-fluid rounded">
+            </div>
+        
+            <!-- Контейнер с текстом, который будет располагаться справа от картинки -->
+            <div class="text-container ms-md-4 mt-3 mt-md-0">
+                <h3 id="liza">Лиза</h3>
+                <p id="rec_liza">Когда готовлю себе дома кофе, я часто выбираю <b>фильтр</b>. <br>Это чёрный кофе, который я завариваю в капельной кофеварке, без давления и прочих хитростей — просто даю горячей воде медленно пролиться через слой молотого кофе. Кстати, в отличие от эспрессо, который заваривается порционно, фильтр обычно готовится сразу в большом объёме — литр-два, чтобы можно было наслаждаться им весь день. Готовый кофе я храню в термосе, и он остаётся свежим на несколько часов. <br><br>Для фильтра я люблю разные сорта, чтобы каждый раз был новый вкус. <br>К примеру, беру Кению, когда хочется чего-то яркого и кислинки, или Коста-Рику — он более спокойный, с нотками сладости.</p>
+                <button id="go_to_add2" class="btn mt-3"><a href="#section_ad4" style="color:white; background-color: #0125af; text-decoration: none;">Рецепты</a></button>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <section id="section_ad3" class="d-flex flex-column align-items-center text-center">
+        <h2 class="my-4">Как мы готовим кофе?</h2>
+    
+        <!-- Карточки -->
+        <div class="cards-container d-flex flex-column align-items-center">
+            
+            <!-- Карточка 1 -->
+            <div class="card p-4 m-3 shadow" style="width: 80%; max-width: 800px;">
+                <h4>Кофе премиального качества на профессиональном оборудовании</h4>
+                <img src="/photos/coffee_machine.jpeg" title="Кофемашина" alt="Бариста наливает шот эспрессо" class="img-fluid rounded my-3">
+                <p>В нашей кофейне мы выбираем только лучшее оборудование, чтобы гарантировать вам выдающийся вкус в каждой чашке. Наша кофемашина NUOVA SIMONELLI APPIA II, одна из лучших на рынке, позволяет нам достигать идеального баланса вкусов и аромата. Все настройки мы выполняем вручную, чтобы каждый напиток соответствовал высшим стандартам качества. Так мы контролируем мельчайшие нюансы вкуса и дарим вам идеальный кофе, который поражает с первого глотка.</p>
+            </div>
+    
+            <!-- Карточка 2 -->
+            <div class="card p-4 m-3 shadow" style="width: 80%; max-width: 800px;">
+                <h4>Специализированное молоко для бариста</h4>
+                <img src="/photos/making_an_order.jpg" title="Заказ" alt="Девушка заказывает капучино" class="img-fluid rounded my-3">
+                <p>Мы используем молоко с добавлением белка, специально разработанное для создания нежной, глянцевой пенки – той самой, которая делает ваш капучино или латте идеальным. Нагреваем молоко до точно заданной температуры, избегая посторонних привкусов, чтобы подчеркнуть вкус зерна и передать его тончайшие ноты.</p>
+            </div>
+        </div>
+    </section>
+    <section id="section_ad4" class="container py-5 d-flex flex-column align-items-center justify-content-center">
+        <h1 class="text-center mb-5">Наши любимые рецепты</h1>
+        <div class="row gy-4">
+            <!-- Карточка 1: Пряный латте -->
+            <div class="col-12 col-lg-6">
+                <div class="card shadow-sm">
+                    <img src="/photos/coffee_sweater.jpeg" 
+                         class="card-img-top" 
+                         title="Кофе" 
+                         alt="Кофейный напиток в стакане, вид сбоку" 
+                         loading="lazy">
+                    <div class="card-body">
+                        <h2 class="card-title">Пряный латте</h2>
+                        <p class="mb-3 fw-bold">Для пряного латте будут нужны:</p>
+                        <ul>
+                            <li>100 мл любимого кофе,</li>
+                            <li>175 мл теплого молока,</li>
+                            <li>½ ч. л. молотой корицы,</li>
+                            <li>½ ч. л. мускатного ореха,</li>
+                            <li>½ ч. л. молотого имбиря.</li>
+                        </ul>
+                        <p>
+                            Переложите все пряности и сахар в ковшик или небольшую кастрюльку, налейте воды и доведите до кипения. 
+                            Затем уменьшите огонь, накройте крышкой и варите 5 минут. Добавьте листовой чай и продолжайте варить на медленном огне еще 2-3 минуты. 
+                            Процедите напиток, разлейте его по чашкам и добавьте теплое молоко.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Карточка 2: Фильтр-кофе -->
+            <div class="col-12 col-lg-6">
+                <div class="card shadow-sm">
+                    <img src="/photos/filter_coffee.jpeg" 
+                         class="card-img-top" 
+                         title="Фильтр" 
+                         alt="Приготовление фильтр-кофе в воронке" 
+                         loading="lazy">
+                    <div class="card-body">
+                        <h2 class="card-title">Фильтр-кофе</h2>
+                        <p>
+                            Нужно 250 грамм воды, 15 грамм кофе смолотого по размерности примерно как сахар-песок.
+                        </p>
+                        <p>
+                            <strong>Инструкция:</strong>
+                        </p>
+                        <ol>
+                            <li>Поместить бумажный фильтр в воронку и равномерно смочить его горячей водой.</li>
+                            <li>Поместить кофе в фильтр по весам и сделать небольшое углубление в центре.</li>
+                            <li>Смочить весь кофе 50 гр. воды (предсмачивание). <span>0:00-0:10</span></li>
+                            <li>Ждать, пока кофе полностью смочится. <span>0:10-0:30</span></li>
+                            <li>Вливать воду по небольшому кругу в центре. <span>0:30-1:30</span></li>
+                            <li>Завершить процесс, снять фильтр с кофейной гущей. <span>2:00-2:30</span></li>
+                        </ol>
+                        <p>
+                            Если время приготовления отклоняется, измените помол. Наслаждайтесь!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <footer>
+        <h4>Напишите нам, мы сделаем вам сайт</h4>
+        <p>Будем рады каждому клиенту!</p>
+        <p id="contacts">Номер: <a href="tel:+7(917)093-97-15">+7(917)093-97-15</a><br>
+            Почта: <a href="mailto:rsanisimova@hse.edu.ru">rsanisimova@hse.edu.ru</a>
+        </p>
+    </footer>
+</body>
+</html>
+
+<style>
+    #section_ad2 .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#section_ad2 .image-container {
+    margin-right: 20px;
+}
+
+    #section_ad2 .text-container {
+        max-width: 600px; /* При необходимости */
+    }
+    body {
+        padding-top: 5%;
+    }
+    .card-body {
+    padding: 1.5rem;
+}
+@media (max-width: 576px) {
+    #section_ad4 h1 {
+        font-size: 1.5rem;
+    }
+}
+
+    @media (max-width: 992px) {
+    #section_ad1 .row {
+        flex-direction: column; /* Ставит элементы друг под другом на маленьких экранах */
+    }
+    #section_ad1 img {
+        margin-top: 10px; /* Уменьшает отступ для мобильных устройств */
+    }
+}
+
+
+</style>

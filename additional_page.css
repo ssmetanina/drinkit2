@@ -1,0 +1,259 @@
+/* подключаю шрифт Stolz Regular */
+@font-face {
+    font-family: 'Stolz Regular';
+    src: local('Stolz'),
+         url('/fonts/stolzl_regular.woff2') format('woff2'), 
+         url('/fonts/stolzl_regular.woff') format('woff');
+  }
+/* Stolz Book */
+@font-face {
+	font-family: 'Stolz Book';
+	src: local('Stolz Book'),
+		url('/fonts/stolzl_book.woff2') format('woff2'), 
+		url('/fonts/stolzl_book.woff') format('woff');
+}
+
+:target:before {
+    content: "";
+    display: block;
+    height: 80px; /* высота заголовка */
+    margin: -80px 0 0; /* компенсация отступа */
+  }
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'Stolz Regular';
+}
+
+header {
+    background-image: url('/photos/header_bg.png');
+    margin-top: 0px;
+    height: 90px;
+    width: auto;
+    position: relative;
+}
+
+
+nav {
+    background-image: url('/photos/header_bg.png');
+    margin-top: 0px;
+    height: 50px;
+    width: 1440px;
+    text-align: left;
+    font-size: 11.5px;
+    padding: 15px 15px;
+    font-weight:bolder;
+    font-family: 'Stolz Regular';
+    position:fixed;
+}
+
+nav ul {
+    
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    color: #130C03;
+
+}
+nav li {
+    margin-left: 100px;
+    display: inline-block;
+    border: 2px solid #130C03;
+    background-color: #D9D9D9;
+    text-align: center;
+    margin: 0px 15px;
+    border-radius: 12px;
+    box-shadow: 0 5px 5px -5px black;
+    width: 175px;
+    height: 50px;
+}
+nav li:hover{
+    background-color: #FFFFFF;
+
+}
+
+nav li a {
+    text-decoration: none;
+    color:#130C03;
+    display:block;
+    padding: 20px 20px;
+}
+
+nav li a:hover{
+    color:blue
+}
+
+.active_nav {
+    background-color: #FFFFFF;
+    color: blue;
+    border-radius: 12px;
+    box-shadow: 0 5px 5px -5px black;
+    width: 135px;
+    height: 10px;
+}
+
+#tg {
+    position: absolute;
+    margin-left: 94%;
+    margin-top: 15px;
+    position: fixed;
+}
+#tg_icon {
+    width: 60px;
+    height: 60px;
+}
+
+#maps {
+    position: absolute;
+    margin-left: 88%;
+    margin-top: 20px;
+    position: fixed;
+}
+#maps_icon {
+    width: 90px;
+}
+
+#sidebar {
+    margin: 10px 10px 0px 0px;
+    width: 180px;
+    height: 300px;
+    background-color: #0125AF;
+    font-family: 'Stolz Regular';
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    position:fixed;
+}
+
+#sidebar ul {
+    list-style-type: none;
+    text-align: left;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    padding-left: 15px;
+}
+
+#sidebar li {
+    margin: 20px 8px 10px 0px;
+    font-size: 11px;
+    padding: 0px;
+    border-radius: 12px;
+    border: 1.5px solid #FFFFFF;
+
+}
+
+
+#sidebar li a {
+    display:block;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 15px 12px;
+}
+
+#sidebar li:hover{
+    color: #0125AF;
+    background-color: #FFFFFF;
+
+}
+
+#sidebar li a:hover {
+    color: #0125AF;
+}
+
+p {
+    font-family: 'Stolz Book';
+}
+
+#section1 {
+    margin: 3% 10% 2% 16%;
+}
+
+#section1 img {
+    width: 29em;
+    height: auto;
+    margin-left: 55%;
+
+}
+
+#section1 #p2 {
+    font-family: 'Stolz Book';
+    margin-top: -280px;
+    font-size: 88%;
+}
+
+#section2 {
+    margin: 3% 10% 2% 16%;
+}
+
+#section2 p {
+    font-size: 88%;
+}
+
+#section2 #rec_liza {
+    margin-left: 280px;
+    margin-top: -300px;
+}
+
+#section2 #img_liza {
+    width: 250px;
+    margin-top: 1%;
+}
+
+#section2 #liza {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+#section3 {
+    margin: 13% 10% 2% 16%;
+}
+
+#coffeemachine {
+    width: 100%;
+}
+
+#order_making {
+    width: 100%;
+}
+
+#go_to_add2 {
+    font-family: 'Stolz Regular';
+    margin-left: 280px;
+    margin-top: 10px;
+    border: none;
+    background-color: #FFFFFF;
+    font-size: larger;
+}
+
+#go_to_add2 a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0125AF;
+    text-decoration: none;
+    color: #FFFFFF;
+    height: 0px;
+    width: 300px;
+    padding: 20px 25px;
+    border-radius: 20px;
+    border: 3.5px solid #0125AF;
+}
+#go_to_add2 a:hover{
+    color: #0125AF;
+    background-color: #FFFFFF;
+    font-weight: bold;
+}
+
+footer {
+    margin-top: 120px;
+    padding: 25px 50px;
+    background-color: #130C03;
+    color:#FFFFFF;
+}
+
+footer #contacts {
+    margin-left: 750px;
+    margin-top: -75px;
+}

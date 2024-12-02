@@ -1,0 +1,271 @@
+/* подключаю шрифт Stolz Regular */
+@font-face {
+    font-family: 'Stolz Regular';
+    src: local('Stolz'),
+         url('/fonts/stolzl_regular.woff2') format('woff2'), 
+         url('/fonts/stolzl_regular.woff') format('woff');
+  }
+/* Stolz Book */
+@font-face {
+	font-family: 'Stolz Book';
+	src: local('Stolz Book'),
+		url('/fonts/stolzl_book.woff2') format('woff2'), 
+		url('/fonts/stolzl_book.woff') format('woff');
+}
+
+html {
+    font-size: 16px;
+}
+
+body
+{
+    font-size: 16px;
+    font-family: 'Stolz Regular';
+    background-color: white;
+    min-width: 320px;
+    padding-top: 3%;
+}
+
+h2 {
+    font-family: 'Stolz Regular';
+}
+
+p {
+    font-family: 'Stolz Book';
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+img, table, div {
+    max-width: 100%;
+    word-wrap: break-word;
+}
+
+.container {
+    font-size: 1rem;
+}
+
+
+#section1 {
+    background-image: url('/photos/detail_darken.png');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    height: 100vh; 
+    display: flex; 
+    align-items: center;
+}
+
+#section2 {
+    background-image: url('/photos/details.jpg  ');
+}
+h1 {
+    white-space: nowrap;
+}
+.text-overlay {
+    z-index: 1;
+}
+
+
+section
+{
+    padding: 50px 10px;
+}
+
+.container {
+    display: flex; /* Используем flexbox */
+    flex-wrap: wrap; /* Позволяет адаптировать контейнер при уменьшении ширины экрана */
+}
+
+.container a {
+    text-decoration: none ;
+    color: #0125af;
+    background-color: white;
+    border-radius: 8em ;
+    border: 0.15em solid #0125af;
+    padding: 0.5em 3em;
+    transition: all ease-in .2s;
+}
+.container a:hover {
+    color: white;
+    background-color:#0125af;
+}
+
+.col button 
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    border: none;
+    background-color: white;
+    }
+
+.row .btn {
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: stretch;
+border: none;
+background-color: white;
+color: #0125af;
+}
+
+#start section {
+    display: flex;
+    justify-content: center;
+    flex-flow:row nowrap;
+    align-items: center;
+    height: 100%;
+}
+
+.child {
+    align-self:flex-start;
+    margin-left: -10vh;
+}
+
+#start img {
+    width: 80vh;
+    position: relative;
+}
+#start {
+    padding-bottom: 0%;
+}
+
+.card {
+    display: flex;
+    justify-content: space-between;
+}
+
+.custom-btn {
+    background-color: #0125af;
+    border: 0.1em solid white;
+    transition: all ease-in 0.2s;
+}
+
+.custom-btn:hover {
+    background-color: white;
+    color: #0125af; 
+    border: 0.1em solid #0125af;
+}
+
+.active {
+    margin: 0.5em 0.1em;
+}
+
+
+.cards img {
+    width: 25em;
+    height: auto;
+}
+
+#cards {
+    margin-left: 0; /* Убираем отрицательные отступы */
+    margin-right: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 20rem;
+    margin-right: 2rem;
+}
+
+
+#section_ad1 img {
+    margin-top: 20px; /* Добавляет немного места между текстом и картинкой на маленьких экранах */
+}
+
+
+
+
+@media screen and (min-width: 992px) {
+    #cards {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    #cards {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    #cards button {
+        width: 50%;
+        text-wrap: nowrap;
+        padding: 1rem 0;
+    }
+}
+
+footer {
+    margin: -10%;
+    margin-top: 10%;
+    padding: 1% 10%;
+    background-color: #130C03;
+    color:#FFFFFF;
+}
+
+@media (max-width: 992px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+    h3 {
+        font-size: 1.5rem;
+    }
+    p {
+        font-size: 1rem;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        font-size: 0.9rem;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 0.875rem;
+    }
+}
+
