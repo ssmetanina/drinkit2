@@ -1,95 +1,77 @@
-function sort(){
-    let price=document.getElementById("price")
-    let title=document.getElementById("title")
-    if(price.checked){
-        document.getElementById('node_for_insert').innerHTML = '';
-         getResponce()}
+async function getResponse() {
+    let content = []; //массив данных из JSON
 
-    if(title.checked){
-        document.getElementById('node_for_insert').innerHTML = '';
-        getResponce1()}
+    try {
+        let response = await fetch("catalogue.json");
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        content = await response.json();
+        console.log("Original content:\n", content);
+
+        //по умолчанию: отображаем первые 9 элементов без сортировки
+        updateDisplay(content);
+    } catch (error) {
+        console.error("Error fetching or processing data:", error);
+    }
+
+    //обработчик для изменения сортировки
+    document.getElementById("sort-select").addEventListener("change", (event) => {
+        const sortOrder = event.target.value; //получаем выбранное значение
+        sortAndDisplay(content, sortOrder);
+    });
 }
 
-async function getResponce() {
-
-    let responce = await fetch("catalogue.json")
-
-    let content = await responce.text()
-    console.log(content)
-    content = JSON.parse(content)
-    content = content.splice(0, 9)
-    //content.sort()
-    console.log(content)
-    let key
-    /*for (key in content) {
-        console.log(content[key].id, content[key].title)
-        console.log(content[key])
-    }*/
-    content_price=content.sort((a, b) => a.price - b.price);
-
-    let node_for_insert = document.getElementById("node_for_insert")
-    //node_for_insert.innerHTML='';
-    for (key in content_price) {
-                node_for_insert.innerHTML += `
-                <li style="width: 310px" class="d-flex flex-column m-1 p-1 border bg-body">
-                <img style="width: 180px" class="align-self-center" src=${content[key].img}>
-                <h5 class="card-title">${content[key].title}</h5>
-                <p class="card-text">${content[key].description}. Цена ${content[key].price+content[key].price*0.2} р.</p>
-                <input type="hidden" name= "vendor_code" value=${content[key].vendor_code}>
-                <p class="card-text" >!Заказать <input class="w-25" type="checkbox" name="check" value="0" onClick='this.value = this.checked ? 1 : 0'></p>
-                </li>
-                        `
-            }
-
-}
-async function getResponce1() {
-   // let responce = await fetch("https://my-json-server.typicode.com/typicode/demo/posts")
-    //let responce = await fetch("https://vmarshirov.github.io/g06u28/030_js/data/0620.json")
-    //let responce = await fetch("http://185.182.111.214:7628/tmp/g06u28.txt_api.json")
-//    let responce = await fetch("shop.json")
-    let responce = await fetch("catalogue.json")
-
-    let content = await responce.text()
-    console.log(content)
-    content = JSON.parse(content)
-    content = content.splice(0, 9)
-    //content.sort()
-    console.log(content)
-    let key
-    /*for (key in content) {
-        console.log(content[key].id, content[key].title)
-        console.log(content[key])
-    }*/
-
-    // sort by name
-    content_title=content.sort((a, b) => {
-    const nameA = a.title.toUpperCase(); // ignore upper and lowercase
-    const nameB = b.title.toUpperCase(); // ignore upper and lowercase
-      if (nameA < nameB) {
-        return -1;
-      }
-      if (nameA > nameB) {
-        return 1;
-      }
-
-      // names must be equal
-      return 0;
+//функция сортировки и обновления отображения
+function sortAndDisplay(content, sortOrder) {
+    //сортировка массива
+    content.sort((a, b) => {
+        if (sortOrder === "asc") {
+            return a.price - b.price; //от меньшей к большей
+        } else if (sortOrder === "desc") {
+            return b.price - a.price; //от большей к меньшей
+        }
+        return 0; //без изменений
     });
 
-   // node_for_insert.innerHTML='';
-    let node_for_insert = document.getElementById("node_for_insert")
-    for (key in content_title) {
-                node_for_insert.innerHTML += `
-                <li style="width: 310px" class="d-flex flex-column m-1 p-1 border bg-body">
-                <img style="width: 180px" class="align-self-center" src=${content_price[key].img}>
-                <h5 class="card-title">${content_price[key].title}</h5>
-                <p class="card-text">. Цена ${content_price[key].price + content_price[key].price * 0.2} р.</p>
-                <input type="hidden" name= "vendor_code" value=${content[key].vendor_code}>
-                <p class="card-text" >!Заказать <input class="w-25" type="checkbox" name="check" value="0" onClick='this.value = this.checked ? 1 : 0'></p>
-                </li>
-                        `
-            }
-
+    //отображаем первые 9 элементов
+    updateDisplay(content.slice(0, 9));
 }
 
-sort()
+//функция для отображения данных
+function updateDisplay(content) {
+    const node_for_insert = document.getElementById("node_for_insert");
+    node_for_insert.innerHTML = ""; //очищаем содержимое
+
+    let row = null;
+    content.forEach((item, index) => {
+        if (index % 3 === 0) {
+            row = document.createElement("div");
+            row.className = "row mb-4";
+            node_for_insert.appendChild(row);
+        }
+
+        const col = document.createElement("div");
+        col.className = "col-lg-4 col-md-6 col-sm-12 mb-4";
+        col.innerHTML = `
+            <div class="card h-100">
+                <img class="card-img-top fluid" src="${item.img}" alt="${item.title}">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">${item.title}</h5>
+                    <p class="card-text price-text">
+                        <span>Цена:</span>
+                        <strong>${item.price} р.</strong>
+                    </p>
+                    <input type="hidden" name="vendor_code" value="${item.vendor_code}">
+                    <input class="form-control w-50 d-inline-block" type="number" name="amount" value="0">
+                </div>
+            </div>
+        `;
+        row.appendChild(col);
+    });
+}
+
+//вызов функции
+getResponse();
