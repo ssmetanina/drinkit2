@@ -81,9 +81,9 @@ async function getResponce1() {
     for (key in content_title) {
                 node_for_insert.innerHTML += `
                 <li style="width: 310px" class="d-flex flex-column m-1 p-1 border bg-body">
-                <img style="width: 180px" class="align-self-center" src=${content[key].img}>
-                <h5 class="card-title">${content[key].title}</h5>
-                <p class="card-text">${content[key].description}. Цена ${content[key].price+content[key].price*0.2} р.</p>
+                <img style="width: 180px" class="align-self-center" src=${content_price[key].img}>
+                <h5 class="card-title">${content_price[key].title}</h5>
+                <p class="card-text">. Цена ${content_price[key].price + content_price[key].price * 0.2} р.</p>
                 <input type="hidden" name= "vendor_code" value=${content[key].vendor_code}>
                 <p class="card-text" >!Заказать <input class="w-25" type="checkbox" name="check" value="0" onClick='this.value = this.checked ? 1 : 0'></p>
                 </li>

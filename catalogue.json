@@ -4,28 +4,28 @@
       "title": "Эспрессо",
       "vendor_code": "111",
       "price": 150,
-      "img": "/photos/espresso.png"
+      "img": "photos/espresso.png"
     },
     {
       "id": "2",
       "title": "Латте",
       "vendor_code": "222",
       "price": 250,
-      "img": "/photos/latte.png"
+      "img": "photos/latte.png"
     },
     {
       "id": "3",
       "title": "Капучино",
       "vendor_code": "333",
       "price": 220,
-      "img": "/photos/capuchino.png"
+      "img": "photos/capuchino.png"
     },
     {
       "id": "4",
       "title": "Американо",
       "vendor_code": "444e",
       "price": 180,
-      "img": "/photos/americano.png"
+      "img": "photos/americano.png"
     }
     ,
     {
@@ -33,7 +33,7 @@
       "title": "Раф",
       "vendor_code": "4445e",
       "price": 300,
-      "img": "/photos/raf.png"
+      "img": "photos/raf.png"
     },
     {
       "id": "6",
