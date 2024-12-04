@@ -6,6 +6,7 @@
         <title>Каталог</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="catalogue.js"></script>
         <link href="styles.css" rel="stylesheet">
 
     </head>
@@ -55,72 +56,18 @@
                 <form action="https://www.google.com/search?" id="order" name="order" target="_blank">
                     <h2 style="text-align: center;">Наше меню</h2>
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
-                        <!-- карточка -->
-                        <div class="col">
-                            <div class="card h-100" style="max-width: 300px; margin: auto;">
-                                <img src="/photos/espresso.png" class="card-img-top img-fluid" alt="Эспрессо">
-                                <div class="card-body">
-                                    <h5 class="card-title">Эспрессо</h5>
-                                    <p class="card-text">150</p>
-                                    <input type="number" name="amount_espresso" value="1" id="amount_espresso" min="0" class="form-control form-control-sm">
-                                </div>
+                        <div class="container">
+                            <!--начало уникального содержания страницы-->
+                             <div class="card-body">
+                                 <h5 class='card-title text-center'>Магазин</h5>
+                                 <form action="https://www.bing.com/search?" id="UserEnter" name="UserEnter" target="_blank">
+                                     <input name="q" type="hidden" value="search">
+                                     <ul class="d-flex flex-row justify-content-around flex-wrap bg-light" id="node_for_insert">
+                                     <!--начало генерируемого фрагмента кода -->
+                                     </ul>
+                             </div>
                             </div>
-                        </div>
-                        <!-- карточка -->
-                        <div class="col">
-                            <div class="card h-100" style="max-width: 300px; margin: auto;">
-                                <img src="/photos/latte.png" class="card-img-top img-fluid" alt="Латте">
-                                <div class="card-body">
-                                    <h5 class="card-title">Латте</h5>
-                                    <p class="card-text">250</p>
-                                    <input type="number" name="amount_latte" value="0" id="amount_latte" min="0" class="form-control form-control-sm">
-                                </div>
-                            </div>
-                        </div>
-                        <!-- карточка -->
-                        <div class="col">
-                            <div class="card h-100" style="max-width: 300px; margin: auto;">
-                                <img src="/photos/capuchino.png" class="card-img-top img-fluid" alt="Капучино">
-                                <div class="card-body">
-                                    <h5 class="card-title">Капучино</h5>
-                                    <p class="card-text">220</p>
-                                    <input type="number" name="amount_capuchino" value="2" id="amount_capuchino" min="0" class="form-control form-control-sm">
-                                </div>
-                            </div>
-                        </div>
-                        <!-- карточка -->
-                        <div class="col">
-                            <div class="card h-100" style="max-width: 300px; margin: auto;">
-                                <img src="/photos/americano.png" class="card-img-top img-fluid" alt="Американо">
-                                <div class="card-body">
-                                    <h5 class="card-title">Американо</h5>
-                                    <p class="card-text">180</p>
-                                    <input type="number" name="amount_americano" value="0" id="amount_americano" min="0" class="form-control form-control-sm">
-                                </div>
-                            </div>
-                        </div>
-                        <!-- карточка -->
-                        <div class="col">
-                            <div class="card h-100" style="max-width: 300px; margin: auto;">
-                                <img src="/photos/raf.png" class="card-img-top img-fluid" alt="Раф">
-                                <div class="card-body">
-                                    <h5 class="card-title">Раф</h5>
-                                    <p class="card-text">300</p>
-                                    <input type="number" name="amount_raf" value="0" id="amount_raf" min="0" class="form-control form-control-sm">
-                                </div>
-                            </div>
-                        </div>
-                        <!-- карточка -->
-                        <div class="col">
-                            <div class="card h-100" style="max-width: 300px; margin: auto;">
-                                <img src="photos/tea.png" class="card-img-top img-fluid" alt="Чай">
-                                <div class="card-body">
-                                    <h5 class="card-title">Чай</h5>
-                                    <p class="card-text">150</p>
-                                    <input type="number" name="amount_raf" value="1" id="amount_tea" min="0" class="form-control form-control-sm">
-                                </div>
-                            </div>
-                        </div>
+                             <!--окончание уникального содержания страницы-->
                     </div>
         
                     <section class="to_order mt-4">
@@ -207,3 +154,4 @@
                 
             }
         </style>
+
