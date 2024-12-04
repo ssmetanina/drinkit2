@@ -1,63 +1,49 @@
 async function getResponse() {
-    let content = []; //массив данных из JSON
+    let originalContent = []; // Оригинальные данные
+    let content = []; // Копия данных для работы
 
-    try {
-        let response = await fetch("catalogue.json");
+    // Загружаем данные
+    const response = await fetch("catalogue.json");
+    if (!response.ok) return;  // Возвращаемся, если ошибка
 
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
+    originalContent = await response.json();
+    content = [...originalContent];
 
-        content = await response.json();
-        console.log("Original content:\n", content);
+    // Отображаем элементы по умолчанию
+    displayContent(content);
 
-        //по умолчанию: отображаем первые 9 элементов без сортировки
-        updateDisplay(content);
-    } catch (error) {
-        console.error("Error fetching or processing data:", error);
-    }
-
-    //обработчик для изменения сортировки
+    // Добавляем обработчик на выбор сортировки
     document.getElementById("sort-select").addEventListener("change", (event) => {
-        const sortOrder = event.target.value; //получаем выбранное значение
-        sortAndDisplay(content, sortOrder);
-    });
-}
+        const sortOrder = event.target.value;
 
-//функция сортировки и обновления отображения
-function sortAndDisplay(content, sortOrder) {
-    //сортировка массива
-    content.sort((a, b) => {
-        if (sortOrder === "asc") {
-            return a.price - b.price; //от меньшей к большей
+        if (sortOrder === "default") {
+            displayContent(originalContent);
+        } else if (sortOrder === "asc") {
+            displayContent([...originalContent].sort((a, b) => a.price - b.price));
         } else if (sortOrder === "desc") {
-            return b.price - a.price; //от большей к меньшей
+            displayContent([...originalContent].sort((a, b) => b.price - a.price));
         }
-        return 0; //без изменений
     });
-
-    //отображаем первые 9 элементов
-    updateDisplay(content.slice(0, 9));
 }
 
-//функция для отображения данных
-function updateDisplay(content) {
-    const node_for_insert = document.getElementById("node_for_insert");
-    node_for_insert.innerHTML = ""; //очищаем содержимое
+// Функция для отображения данных
+function displayContent(content) {
+    const container = document.getElementById("node_for_insert");
+    container.innerHTML = ""; // Очищаем контейнер
 
     let row = null;
     content.forEach((item, index) => {
         if (index % 3 === 0) {
             row = document.createElement("div");
             row.className = "row mb-4";
-            node_for_insert.appendChild(row);
+            container.appendChild(row);
         }
 
         const col = document.createElement("div");
         col.className = "col-lg-4 col-md-6 col-sm-12 mb-4";
         col.innerHTML = `
             <div class="card h-100">
-                <img class="card-img-top fluid" src="${item.img}" alt="${item.title}">
+                <img class="card-img-top" src="${item.img}" alt="${item.title}">
                 <div class="card-body d-flex flex-column">
                     <h5 class="card-title">${item.title}</h5>
                     <p class="card-text price-text">
@@ -73,5 +59,5 @@ function updateDisplay(content) {
     });
 }
 
-//вызов функции
+// Вызов функции
 getResponse();
